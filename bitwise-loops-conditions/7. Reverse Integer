@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int reverse(int x) {
+        int rem;
+        int mul = 1;
+        int ans = 0;
+
+        while (x!=0) {
+            rem = x % 10;
+            x = x / 10;
+            if(ans>INT_MAX/10 || ans<INT_MIN/10) // early check as we know that number is incrasing by 10 then we compare it with 
+                                                 //  max value divide by 10 as we are confirm as this x is grater than max/10 then
+                                                // next number is going to cause overflow so we set early check and return 0
+            return 0;
+            ans = ans * 10 + rem;
+            
+        }
+
+        return ans;
+    }
+};
